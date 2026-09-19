@@ -451,6 +451,7 @@ h2 {
   margin: 0;
   display: flex;
   flex-direction: column;
+  container-type: inline-size;
 }
 .asset-preview {
   height: 390px;
@@ -473,6 +474,15 @@ h2 {
   font: 400 10px var(--mono);
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+@container (max-width: 300px) {
+  .asset-card figcaption span:nth-child(2) {
+    display: none;
+  }
+  .asset-card figcaption a {
+    margin-left: auto;
+  }
 }
 .asset-card figcaption span:nth-child(2) {
   margin-left: auto;
@@ -955,14 +965,11 @@ footer a:hover {
     grid-template-columns: 1fr;
   }
   .asset-card figcaption {
-    flex-wrap: wrap;
-    gap: 10px 16px;
-  }
-  .asset-card figcaption span:nth-child(2) {
-    margin-left: 0;
+    gap: 10px;
+    padding: 16px 14px;
   }
   .asset-card figcaption a {
-    margin-left: auto;
+    padding-left: 12px;
   }
   .asset-preview {
     height: 280px;
